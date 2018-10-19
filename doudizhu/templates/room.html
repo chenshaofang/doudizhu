@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block content %}
+    <script>
+        function id(){
+            return {{ room_id }}
+        }
+        function v(){
+            var v='{{ v }}'.replace(/&quot;/g,"\"");
+            return v
+        }
+        function uname(){
+            return '{{ uname }}'
+        }
+    </script>
+        <script src="/static/js/room.js"></script>
+        <div id="fangjian">
+        <p id="p1"></p>
+        <p>
+            房间名: <span id="room_name">{{ room_name }}</span>
+        </p>
+        <p>
+            房主: <span id="room_root">{{ room_root }}</span>
+        </p>
+        <p>
+            玩家1：
+            <span id="s_1"></span>
+        </p>
+        <p>
+            玩家2:
+            <span id="s_2"></span>
+        </p>
+        <p>
+           <span id="bu1">
+            <button id="start">开始</button>
+           </span>
+            <button id='signout'>退出</button>
+        </p>
+    </div>
+    {% endblock %}
+</body>
+</html>

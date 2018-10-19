@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{
+            text-decoration:none;
+        }
+        .daohang{
+            width:1200px;
+            height:35px;
+            border:1px solid #111111;
+        }
+        .daohang ul li{
+            list-style: none;
+            float:left;
+            margin-left:130px;
+        }
+        .daohang ul{
+            margin-top:10px;
+        }
+        .daohang img{
+            width:25px;
+            height:25px;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/index.js"></script>
+    {#导航栏#}
+    <div class="daohang">
+        <ul>
+            <li class="l1">
+                <a href="/tuichu/">
+                    <img src="/static/img/tuichu.jpg" alt="">
+                </a>
+            </li>
+            <li class="l2">
+                <a href="">
+                    <img src="{{ uimg }}" alt="">
+                    <span id="s1">{{ uname }}</span>
+                </a>
+            </li >
+            <li class="l3">
+                <img src="/static/img/jinbi.jpg" alt="">
+                <span>{{ ucoin }}</span>
+            </li>
+            <li class="l4"><a href="">商城</a></li>
+            <li class="l5"><a href="">活动</a></li>
+            <li class="l6"><a href="">房间</a></li>
+        </ul>
+    </div>
+    {# 房间展示 #}
+    {% block content%}
+    <div class="fangjian">
+        <p>
+            <input type="text" name="roomname">
+            <button id="create">创建</button>
+            <button id="join">加入</button>
+        </p>
+    </div>
+    {% endblock %}
+</body>
+</html>

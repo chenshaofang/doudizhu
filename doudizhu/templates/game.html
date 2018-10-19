@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    {% block content %}
+        <style>
+            #ul {
+                width:50px;
+            }
+           li{
+                list-style: none;
+                float:left;
+                margin-left:30px;
+           }
+        #puke{
+            width:200px;
+            height:200px;
+            border:1px solid #111111;
+        }
+        </style>
+        <script>
+            function room_id(){
+                return '{{ room_id }}'
+            }
+            function appear(){
+                return '{{ my_number }}'
+            }
+        </script>
+    <script src="/static/js/game.js"></script>
+    <p>房间名{{ room_name }}</p>
+    <div>
+        <ul id="wj1" name="{{ my_number }}">
+            <li> 我：</li>
+            {% for p in puke %}
+                <li>{{ p }}</li>
+            {% endfor %}
+            <li></li>
+        </ul>
+    </div>
+    <div>
+        <br/>
+
+        <ul id="wj2" name="{{ number2 }}">
+            <li>{{ name2 }}:</li>
+            {% for i in  len_puke2  %}
+                <li>*</li>
+            {% endfor %}
+        </ul>
+    </div>
+        <br/>
+    <div>
+        <ul id="wj3" name="{{ number3 }}">
+            <li> {{ name3 }}:</li>
+            {% for i in  len_puke3  %}
+                <li>*</li>
+            {% endfor %}
+        </ul>
+    </div>
+        <br/>
+        <button id="appear_puke">出牌</button>
+        <div id="puke">
+
+        </div>
+        <div id="game_over"></div>
+    {% endblock %}
+</body>
